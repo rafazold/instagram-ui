@@ -1,0 +1,28 @@
+button img {
+  max-width: 30px;
+  max-height: 30px
+}
+
+button {
+  border:none;
+  background: none;
+}
+
+.engageButtons {
+  display: flex;
+  margin: 5px 5px 10px 0;
+  justify-content: flex-start;
+}
+
+.saveButton {
+  margin-left: 395px;
+}
+
+.commentButton {
+  margin-left: 25px;
+}
+
+
+.likesCount {
+  margin-left: 5px;
+}
