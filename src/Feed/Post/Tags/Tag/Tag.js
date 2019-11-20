@@ -5,7 +5,7 @@ class Tag extends Component {
     render() {
         return (
             <span className="tag">
-                {this.props.children}
+                #{this.props.children}
             </span>
         );
     }

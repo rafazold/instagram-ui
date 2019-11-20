@@ -1,13 +1,14 @@
 .tag {
-  margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 0;
 
 }
 
 .tag {
   background-color: #f0f7fb;
   border: solid 1px #3498db;
-  border-radius: 6px;
+  border-radius: 4px;
   line-height: 1px;
   overflow: hidden;
-  padding: 4px;
+  padding: 2px;
+  font-size: 12px;
 }

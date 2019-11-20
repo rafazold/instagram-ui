@@ -1,7 +1,10 @@
 .feed {
-  max-width: 620px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
-  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+.post-wrapper {
+  max-width: 30%;
 }

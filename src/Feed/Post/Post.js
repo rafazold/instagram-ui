@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
 import "./Post.scss";
-import User from "./User/User";
 import Engage from "./Engage/Engage";
 import Tags from "./Tags/Tags";
+import Header from "./Header/Header";
 
 
 class Post extends Component {
     render() {
-        const creationDate = new Date(this.props.datePosted);
-        console.log(creationDate);
         return (
-            <div className="post">
-                <User >USER DETAILS</User>
-                <h2 className="postTitle">{this.props.title}</h2>
-                <img src={this.props.src}/>
-                <Engage likes={ `likes: ${this.props.likes}`}/>
-                <Tags tags={this.props.tags} />
-                <div className="datePosted">{creationDate.toDateString()}</div>
-            </div>
+            <article className="post">
+                <Header creationDate={new Date(this.props.datePosted * 1000)} />
+                <div className="post-image">
+                    <img src={this.props.src}/>
+                </div>
+                <Engage likes={ this.props.likes}/>
+                <div className="post-content">
+                    <h1 className="post-title">{this.props.title}</h1>
+                    <Tags tags={this.props.tags} />
+                </div>
+            </article>
         );
     }
 }

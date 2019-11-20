@@ -21,9 +21,9 @@ class Feed extends Component {
 
     render() {
         return (
-            <div>
+            <div className="feed">
                 {this.state.posts.map(post => {
-                    return <div className="feed">
+                    return <div className="post-wrapper">
                         <Post title={post.title} src={post.image} likes={post.likes} datePosted={post.created} tags={post.tags}/>
                     </div>
                 })}
