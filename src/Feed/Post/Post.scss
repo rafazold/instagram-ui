@@ -8,6 +8,10 @@
   img {
     width: 100%;
     vertical-align: middle;
+    transition: all .4s ease-in-out;
+    &:hover {
+      width: 125%;
+    }
   }
 }
 
