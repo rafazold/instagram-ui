@@ -9,6 +9,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import Bootstraptest from "./Feed/Bootstraptest";
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
                   <Switch>
                       <Route path="/profile">
                           <Profile />
+                      </Route>
+                      <Route path="/test">
+                          <Bootstraptest />
                       </Route>
                       <Route path="/">
                           <Feed/>
