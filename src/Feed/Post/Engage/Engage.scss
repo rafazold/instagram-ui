@@ -5,23 +5,25 @@ button {
   }
 }
 
-button {
+.engageButtons button {
   border:none;
   background: none;
+  color: #aad6e2;
 }
 
 .engageButtons {
   display: flex;
   margin: 5px 5px 10px 0;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.saveButton {
-
+.post-action-buttons {
+  justify-content: flex-start;
 }
 
-.commentButton {
-
+.post-likes {
+  justify-content: flex-end;
+  color: #aad6e2;
 }
 
 

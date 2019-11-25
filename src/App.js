@@ -9,7 +9,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Bootstraptest from "./Feed/Bootstraptest";
+import CreatePost from "./CreatePost/CreatePost";
 
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
                       <Route path="/profile">
                           <Profile />
                       </Route>
-                      <Route path="/test">
-                          <Bootstraptest />
+                      <Route path="/post/create">
+                          <CreatePost />
                       </Route>
                       <Route path="/">
                           <Feed/>

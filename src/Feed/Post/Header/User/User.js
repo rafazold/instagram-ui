@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./User.scss"
-import {faGrinAlt, faUser} from '@fortawesome/free-regular-svg-icons';
+import {faUser} from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 

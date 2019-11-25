@@ -1,10 +1,27 @@
+//TODO: media query on sm height auto on image-wrapper
+//
+
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins/_breakpoints";
+@include media-breakpoint-down(sm) {
+  .post-image {
+    height: auto;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .post-image {
+    height: 150px;;
+  }
+}
+
 .post {
-  height: 340px;
   border: 1px solid #f1f1f1;
   margin: 15px 0;
   border-radius: 3px;
   overflow: hidden;
-  background-color: #f8f9fa;
+  background-color: rgba(95, 95, 95, 0.83);
 
   img {
     width: 100%;
@@ -21,14 +38,19 @@
 }
 
 .post-image {
-  height: 150px;
+  //height: 200px;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
 .post-title {
-  color: #5f5f5f;
+  color: #aad6e2;
   font-size: 12px;
   line-height: 1.5em;
+  margin-left: 5px;
+}
+
+.post-content {
+  min-height: 90px;
 }
