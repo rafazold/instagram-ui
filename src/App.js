@@ -6,8 +6,7 @@ import Profile from "./Profile/Profile";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 import CreatePost from "./CreatePost/CreatePost";
 

@@ -23,8 +23,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-
-{/*<header className="Header">*/}
-{/*    Instagram*/}
-{/*</header>*/}
