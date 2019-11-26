@@ -1,9 +1,12 @@
 //TODO: media query on sm height auto on image-wrapper
 //
 
-@import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "../../utilities/_variables.scss";
+
+
 @include media-breakpoint-down(sm) {
   .post-image {
     height: auto;
@@ -21,7 +24,7 @@
   margin: 15px 0;
   border-radius: 3px;
   overflow: hidden;
-  background-color: rgba(95, 95, 95, 0.83);
+  background-color: $post-bg-color;
 
   img {
     width: 100%;
@@ -45,7 +48,7 @@
 }
 
 .post-title {
-  color: #aad6e2;
+  color: $post-font-color;
   font-size: 12px;
   line-height: 1.5em;
   margin-left: 5px;

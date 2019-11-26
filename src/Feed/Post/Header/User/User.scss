@@ -1,6 +1,8 @@
+@import "../../../../utilities/_variables.scss";
+
 .user-details {
   font-size: 12px;
-  color: #aad6e2;
+  color: $post-font-color;
   margin-left: 5px;
 
   svg {

@@ -1,14 +1,16 @@
+@import '../../../../utilities/_variables.scss';
+
 .tag {
   margin: 5px 5px 5px 0;
-
-}
-
-.tag {
   background-color: #f0f7fb;
-  border: solid 1px #3498db;
+  border: solid 1px $post-font-color;
   border-radius: 4px;
   line-height: 1px;
   overflow: hidden;
   padding: 2px;
   font-size: 12px;
+  &:hover {
+    background-color: $post-font-color;
+    padding: 3px;
+  }
 }

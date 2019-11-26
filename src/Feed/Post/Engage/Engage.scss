@@ -1,3 +1,5 @@
+@import '../../../utilities/_variables.scss';
+
 button {
   svg {
     max-width: 30px;
@@ -8,7 +10,7 @@ button {
 .engageButtons button {
   border:none;
   background: none;
-  color: #aad6e2;
+  color: $post-font-color;
 }
 
 .engageButtons {
@@ -23,7 +25,7 @@ button {
 
 .post-likes {
   justify-content: flex-end;
-  color: #aad6e2;
+  color: $post-font-color;
 }
 
 

@@ -1,7 +1,14 @@
+@import '../../../utilities/_variables.scss';
+
 .post-header {
   margin-top: 15px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.post-date {
+  color: $post-font-color;
+  margin-right: 5px;
 }

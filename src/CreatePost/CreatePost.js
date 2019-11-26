@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Formik, Form, Field, ErrorMessage} from "formik";
 import Button from "react-bootstrap/Button";
 import postModel from '../models/post.model'
+import "./CreatePost.scss"
 
 class CreatePost extends Component {
 
@@ -11,7 +12,7 @@ class CreatePost extends Component {
 
     render() {
         return (
-            <div>
+            <div className="post-create">
                 <h2>Create Post</h2>
                 <Formik initialValues={{image: '', title: '', tags: ''}}
                         validationSchema={postModel}
