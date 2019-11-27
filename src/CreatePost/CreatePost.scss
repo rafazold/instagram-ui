@@ -2,4 +2,81 @@
 
 .post-create {
   background-color: $post-bg-color;
+  color: $post-font-color;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+h2 {
+  margin-left: 25%;
+}
+
+[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+[type="file"] + label {
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  outline: none;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+  //width: 200px;
+
+  &:hover {
+    background-color: darken(#007bff, 10%);
+  }
+
+  &.upload-button {
+    background-color: #007bff;
+    box-shadow: 0 4px darken(#007bff, 10%);
+    transition: none;
+
+    &:hover {
+      box-shadow: 0 4px darken(#007bff, 10%);
+      top: 2px;
+    }
+  }
+}
+
+.create-post-tags {
+
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #fff;
+
+  .react-tagsinput-input {
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    margin: 7px;
+    &:hover, &:focus, &:active {
+      outline: 0;
+    }
+  }
+
+  .react-tagsinput-tag {
+    display: inline-block;
+    color: #ffffff;
+    background: #5798ff;
+    margin: 5px;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
 }

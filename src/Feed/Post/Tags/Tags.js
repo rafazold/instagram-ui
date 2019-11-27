@@ -4,7 +4,7 @@ import "./Tags.scss";
 
 class Tags extends Component {
     render() {
-        // const tags = {this.props.tags};
+        // const Tags = {this.props.Tags};
         return (
             <div className="tags">
                 {this.props.tags.map(tag => {

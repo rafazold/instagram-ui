@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import "./User.scss"
-import {faUser} from '@fortawesome/free-regular-svg-icons';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { AiOutlineUser } from "react-icons/ai";
 
 
 
@@ -9,7 +8,7 @@ class User extends Component {
     render() {
         return (
             <div className="user-details">
-                <FontAwesomeIcon className="user-icon" icon={faUser} size="2x" />
+                <AiOutlineUser className="user-icon" size="2em" />
                 {/*<img src={this.props.src}/>*/}
                 {this.props.children}
             </div>
