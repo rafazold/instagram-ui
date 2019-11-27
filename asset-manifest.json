@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/instagram-ui/static/css/main.46ec016c.chunk.css",
+    "main.css": "/instagram-ui/static/css/main.99c8cfb4.chunk.css",
     "main.js": "/instagram-ui/static/js/main.bdf06122.chunk.js",
     "main.js.map": "/instagram-ui/static/js/main.bdf06122.chunk.js.map",
     "runtime-main.js": "/instagram-ui/static/js/runtime-main.3f467fad.js",
@@ -9,16 +9,16 @@
     "static/js/2.c422d828.chunk.js": "/instagram-ui/static/js/2.c422d828.chunk.js",
     "static/js/2.c422d828.chunk.js.map": "/instagram-ui/static/js/2.c422d828.chunk.js.map",
     "index.html": "/instagram-ui/index.html",
-    "precache-manifest.6c0951c7295d94e41c65c4428c9ab080.js": "/instagram-ui/precache-manifest.6c0951c7295d94e41c65c4428c9ab080.js",
+    "precache-manifest.5a8d897aa97265820fac156ca1786062.js": "/instagram-ui/precache-manifest.5a8d897aa97265820fac156ca1786062.js",
     "service-worker.js": "/instagram-ui/service-worker.js",
     "static/css/2.06b08db3.chunk.css.map": "/instagram-ui/static/css/2.06b08db3.chunk.css.map",
-    "static/css/main.46ec016c.chunk.css.map": "/instagram-ui/static/css/main.46ec016c.chunk.css.map"
+    "static/css/main.99c8cfb4.chunk.css.map": "/instagram-ui/static/css/main.99c8cfb4.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.3f467fad.js",
     "static/css/2.06b08db3.chunk.css",
     "static/js/2.c422d828.chunk.js",
-    "static/css/main.46ec016c.chunk.css",
+    "static/css/main.99c8cfb4.chunk.css",
     "static/js/main.bdf06122.chunk.js"
   ]
 }
