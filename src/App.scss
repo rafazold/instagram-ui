@@ -1,17 +1,6 @@
-/*other background options:
-
-
-*/
 
 body {
-  //background-image: url("https://image.freepik.com/free-photo/abstract-formed-by-color-dissolving-water_1112-1938.jpg");
   background-image: url("/background/background-blur-clean-clear-531880.jpg");
-  //background-image: url("/background/maarten-deckers-8RU1Ei3KcPw-unsplash.jpg");
-  //background-image: url("/background/math-U5mHl-uACe0-unsplash.jpg");
-  //background-image: url("/background/paul-hanaoka-rYchmOEzWlo-unsplash.jpg");
-  //background-image: url("/background/erik-jan-leusink-4psNpOezGzQ-unsplash.jpg");
-  //background-image: url("https://image.freepik.com/free-vector/blue-abstract-acrylic-brush-stroke-textured-background_53876-86373.jpg");
-  //background-image: url("https://image.freepik.com/free-vector/white-textured-paper_53876-86282.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -35,14 +24,11 @@ body {
   color: #09d3ac;
 }
 
-.main {
-  margin-top: 20px;
-}
-
 .container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 90px;
 }

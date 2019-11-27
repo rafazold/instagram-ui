@@ -15,7 +15,7 @@ function App() {
   return (
       <Router>
           <div className="App">
-              <Header/>
+              <Header />
               <main className="container">
                   <Switch>
                       <Route path="/profile">
