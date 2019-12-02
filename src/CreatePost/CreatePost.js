@@ -34,12 +34,8 @@ class CreatePost extends Component {
     }
 
     submit(values) {
-        console.log('values: ', values);
-        console.log('new values: ', this.convertToFormData(values));
-        const data = new FormData();
-        for (let key in values) {
-            data.append(key, values[key]);
-        }
+        const data = this.convertToFormData(values);
+
         fetch(config.apiUrl + '/api/posts', {
             method: 'POST',
             body: data
@@ -56,41 +52,42 @@ class CreatePost extends Component {
                 <Formik initialValues={{image: '', title: '', tags: []}}
                         validationSchema={postModel}
                         onSubmit={this.submit.bind(this)}
-                        render={({setFieldValue}) => {
-                            return <Form className="col-xs-12 col-md-6 m-auto">
-                                <div className="row form-group ">
-                                    <input name="image" type="file" id="image" onChange={(event => {
-                                        setFieldValue('image', event.currentTarget.files[0]);
-                                    })} />
-                                    <label htmlFor="image" className="upload-button">
+                        >
+                    {({setFieldValue}) => {
+                        return <Form className="col-xs-12 col-md-6 m-auto">
+                            <div className="row form-group ">
+                                <input name="image" type="file" id="image" onChange={(event => {
+                                    setFieldValue('image', event.currentTarget.files[0]);
+                                })} />
+                                <label htmlFor="image" className="upload-button">
                                 <span>
                                     <GoCloudUpload /> Select image
                                 </span>
-                                    </label>
-                                    <div className="container-fluid row">
-                                        <ErrorMessage className="alert alert-danger mt-2" name="image" component="div" />
-                                    </div>
+                                </label>
+                                <div className="container-fluid row">
+                                    <ErrorMessage className="alert alert-danger mt-2" name="image" component="div" />
                                 </div>
-                                <div className="row form-group">
-                                    <label>Title:</label>
-                                    <Field name="title" as="textarea" placeholder="About this post..." className="form-control"/>
-                                    <ErrorMessage className="alert alert-danger" name="title" component="div" />
-                                </div>
-                                <div className="row form-group">
-                                    <label>Tags:</label>
-                                    <TagsInput value={this.state.tags}
-									           onChange={(tags) => {
-									               this.handleTagsChange(tags);
-										           setFieldValue('tags', tags);
-									           }}
-									           className="tags-wrapper create-post-tags" />
-                                    <div><sub>Press Enter after each a tag</sub></div>
-                                </div>
-                                <div className="row form-group d-flex justify-content-end">
-                                    <Button type="submit"><FaRegShareSquare /> Share your post</Button>
-                                </div>
-                            </Form>
-                        }} >
+                            </div>
+                            <div className="row form-group">
+                                <label>Title:</label>
+                                <Field name="title" as="textarea" placeholder="About this post..." className="form-control"/>
+                                <ErrorMessage className="alert alert-danger" name="title" component="div" />
+                            </div>
+                            <div className="row form-group">
+                                <label>Tags:</label>
+                                <TagsInput value={this.state.tags}
+                                           onChange={(tags) => {
+                                               this.handleTagsChange(tags);
+                                               setFieldValue('tags', tags);
+                                           }}
+                                           className="tags-wrapper create-post-tags" />
+                                <div><sub>Press Enter after each a tag</sub></div>
+                            </div>
+                            <div className="row form-group d-flex justify-content-end">
+                                <Button type="submit"><FaRegShareSquare /> Share your post</Button>
+                            </div>
+                        </Form>
+                    }}
 
                 </Formik>
             </div>
