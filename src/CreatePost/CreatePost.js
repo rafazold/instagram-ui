@@ -42,6 +42,7 @@ class CreatePost extends Component {
         })
             .then(res => res.json())
             .then(post => console.log('post:', post))
+            .then(() => window.location.href = "/")
             .catch(err => console.log(err));
     }
 
