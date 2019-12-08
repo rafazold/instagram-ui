@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./Feed.scss";
 import Post from "./Post/Post";
 import {HashLoader} from "react-spinners";
+import config from "../config";
 
 
 class Feed extends Component {
@@ -14,7 +15,8 @@ class Feed extends Component {
     }
 
     componentDidMount() {
-        fetch("https://my-json-server.typicode.com/evyros/fake-api/posts")
+        fetch(config.apiUrl + '/api/posts')
+        // fetch("https://my-json-server.typicode.com/evyros/fake-api/posts")
             .then(res => res.json())
             .then(posts => {
                 this.setState({posts,loading:false});
@@ -37,8 +39,13 @@ class Feed extends Component {
                 <div className="feed d-flex flex-wrap card-group">
                     {this.state.posts.map(post => {
                         return <div className="post-wrapper col-sm-12 col-md-4">
-                            <Post title={post.title} src={post.image} likes={post.likes} datePosted={post.created}
-                                  tags={post.tags}/>
+                            <Post
+                                key={post._id}
+                                title={post.title}
+                                src={post.image}
+                                likes={post.likes}
+                                datePosted={post.created}
+                                tags={post.tags}/>
                         </div>
                     })}
                 </div>

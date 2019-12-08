@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./Header.scss"
 import {Link} from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
+import User from "./User/User";
 
 class Header extends Component {
     render() {
@@ -18,6 +19,9 @@ class Header extends Component {
                             <Link className="nav-link" to="/profile">Profile</Link>
                             <Link className="nav-link" to="/post/create">New Post</Link>
                         </Nav>
+                        <div>
+                           <User />
+                        </div>
                     </Navbar.Collapse>
                 </Navbar>
             </div>
