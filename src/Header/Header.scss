@@ -1,5 +1,7 @@
+@import "../utilities/_variables.scss";
+
 .bg-light {
-  background-color: #e1e4e4 !important;
+  background-color: $header-bar-color !important;
   border: 2px solid white;
   border-radius: 3px;
 }

@@ -16,7 +16,6 @@ class Feed extends Component {
 
     componentDidMount() {
         fetch(config.apiUrl + '/api/posts')
-        // fetch("https://my-json-server.typicode.com/evyros/fake-api/posts")
             .then(res => res.json())
             .then(posts => {
                 this.setState({posts,loading:false});
@@ -45,7 +44,10 @@ class Feed extends Component {
                                 src={post.image}
                                 likes={post.likes}
                                 datePosted={post.created}
-                                tags={post.tags}/>
+                                tags={post.tags}
+                                userName={post.user.username}
+                                iconColor={'green'}
+                            />
                         </div>
                     })}
                 </div>

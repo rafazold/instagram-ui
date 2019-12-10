@@ -2,11 +2,17 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import "./User.scss"
 import config from "../../config";
+import { withRouter } from 'react-router-dom';
+import {IoIosSettings} from 'react-icons/io'
+import Toggle from "react-toggle";
 
 class User extends Component {
     constructor(props) {
         super(props);
-        this.state = {user: null}
+        this.state = {
+            user: null,
+            hideMenu: true
+        }
     }
 
     componentDidMount() {
@@ -21,23 +27,52 @@ class User extends Component {
             .catch(e => console.log(e))
     }
 
+    toggleMenu() {
+            this.setState({hideMenu: !this.state.hideMenu})
+    }
+
+    logout() {
+        fetch(config.apiUrl + '/api/users/logout', {
+            method: 'GET',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => {
+                if(res.status === 200) {
+                    this.props.history.push('/login');
+                }
+            })
+            .catch(e => console.log('Unexpected error: ', e))
+
+    }
+
     render() {
         return (
-            <div className="User">
+            <div className="user-box">
                 {
                     this.state.user
-                        ? <div>Hello {this.state.user.name}</div>
-                        : <div className="user-text">
-                            <Link to="/register">Register</Link>
-                            <Link to="/login">Login</Link>
+                        ? <div className={"header-user-details"}>
+                            Hello {this.state.user.username}
+                    </div>
+                        : <div>
+                            <Link className="user-text" to="/register">Register</Link>
+                            <Link className="user-text" to="/login">Login</Link>
                         </div>}
-                <div className="user-avatar">
+                <div>
+                    <div className="user-avatar" onClick={this.toggleMenu.bind(this)}>
                         USER
+                    </div>
+                    <ul className={`user-options ${this.state.hideMenu ? "hide-user-options" : ""}`}>
+                        <li>Dark Mode</li>
+                        <li>Edit Profile</li>
+                        <li onClick={this.logout.bind(this)}>Logout</li>
+                    </ul>
                 </div>
-
             </div>
         );
     }
 }
 
-export default User;
+export default withRouter(User);

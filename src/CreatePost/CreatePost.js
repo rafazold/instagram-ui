@@ -38,7 +38,8 @@ class CreatePost extends Component {
 
         fetch(config.apiUrl + '/api/posts', {
             method: 'POST',
-            body: data
+            body: data,
+            credentials: 'include'
         })
             .then(res => res.json())
             .then(post => console.log('post:', post))

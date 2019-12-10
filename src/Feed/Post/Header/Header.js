@@ -13,7 +13,7 @@ class Header extends Component {
     render() {
         return (
             <header className="post-header">
-                <User>USER DETAILS</User>
+                <User iconColor={this.props.iconColor} userName={this.props.userName} />
                 <div className="post-date">{formatDate(this.props.creationDate)}</div>
                 {/*<div className="post-date">{this.props.creationDate.toLocaleString("en-US", { month: 'short', day: 'numeric', year: 'numeric', })}</div>*/}
             </header>

@@ -8,9 +8,9 @@ class User extends Component {
     render() {
         return (
             <div className="user-details">
-                <AiOutlineUser className="user-icon" size="2em" />
+                <AiOutlineUser className="user-icon" size="2em" color={this.props.iconColor} />
                 {/*<img src={this.props.src}/>*/}
-                {this.props.children}
+                {this.props.userName}
             </div>
         );
     }

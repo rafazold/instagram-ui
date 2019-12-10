@@ -10,7 +10,7 @@ class Post extends Component {
     render() {
         return (
             <article className="post">
-                <Header creationDate={this.props.datePosted} />
+                <Header creationDate={this.props.datePosted} iconColor={this.props.iconColor} userName={this.props.userName}/>
                 {/*<Header creationDate={new Date(this.props.datePosted * 1000)} />*/}
                 <div className="post-image">
                     <img src={config.apiUrl + '/' + this.props.src} alt="post"/>
