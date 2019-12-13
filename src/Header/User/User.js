@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "./User.scss"
 import config from "../../config";
 import { withRouter } from 'react-router-dom';
-import {IoIosSettings} from 'react-icons/io'
+import {FaUser} from 'react-icons/fa'
 import Toggle from "react-toggle";
 
 class User extends Component {
@@ -22,6 +22,7 @@ class User extends Component {
         })
             .then(res => res.json())
             .then(user => {
+                // console.log(user.avatarColor);
                 this.setState({user});
             })
             .catch(e => console.log(e))
@@ -29,6 +30,13 @@ class User extends Component {
 
     toggleMenu() {
             this.setState({hideMenu: !this.state.hideMenu})
+    }
+    showUserMenu() {
+        this.setState({hideMenu: true})
+    }
+
+    hideUserMenu() {
+        this.setState({hideMenu: true})
     }
 
     logout() {
@@ -50,26 +58,39 @@ class User extends Component {
 
     render() {
         return (
-            <div className="user-box">
+            <div >
                 {
                     this.state.user
-                        ? <div className={"header-user-details"}>
-                            Hello {this.state.user.username}
-                    </div>
-                        : <div>
+                        ? <div className="user-box">
+                            <div className="header-user-details">
+                                Hello {this.state.user.username}
+                            </div>
+                            <div className="user-avatar" onClick={this.toggleMenu.bind(this)}>
+                                {
+                                    this.state.user
+                                        ? <img src={config.apiUrl + '/' + this.state.user.avatar}/>
+                                        : <FaUser size="2em" />
+
+                                }
+
+                            </div>
+                                <ul className={`user-options ${this.state.hideMenu ? "hide-user-options" : ""}`}
+                                    // onMouseOut={this.hideUserMenu.bind(this)}
+                                    >
+                                    <li>Dark Mode</li>
+                                    <li><Link to="/editprofile">Edit Profile</Link></li>
+                                    <li onClick={this.logout.bind(this)}>Logout</li>
+                                </ul>
+                        </div>
+
+                        : <div className="user-box">
                             <Link className="user-text" to="/register">Register</Link>
                             <Link className="user-text" to="/login">Login</Link>
+                            <div className="user-avatar"
+                                 onClick={this.toggleMenu.bind(this)}>
+                                <FaUser size="2em" />
+                            </div>
                         </div>}
-                <div>
-                    <div className="user-avatar" onClick={this.toggleMenu.bind(this)}>
-                        USER
-                    </div>
-                    <ul className={`user-options ${this.state.hideMenu ? "hide-user-options" : ""}`}>
-                        <li>Dark Mode</li>
-                        <li>Edit Profile</li>
-                        <li onClick={this.logout.bind(this)}>Logout</li>
-                    </ul>
-                </div>
             </div>
         );
     }

@@ -11,6 +11,7 @@ import {
 import CreatePost from "./CreatePost/CreatePost";
 import Register from "./Register/Register";
 import Login from "./Login/Login";
+import EditPofile from "./editProfile/EditPofile";
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
                       </Route>
                       <Route path="/register">
                           <Register />
+                      </Route>
+                      <Route path="/editprofile">
+                          <EditPofile />
                       </Route>
                       <Route path="/login">
                           <Login />

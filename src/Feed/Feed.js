@@ -46,7 +46,7 @@ class Feed extends Component {
                                 datePosted={post.created}
                                 tags={post.tags}
                                 userName={post.user.username}
-                                iconColor={'green'}
+                                avatar={post.user.avatar}
                             />
                         </div>
                     })}

@@ -9,8 +9,6 @@ import config from '../config'
 import TagsInput from 'react-tagsinput'
 import 'react-tagsinput/react-tagsinput.css'
 
-
-
 class CreatePost extends Component {
     constructor(props) {
         super(props);
@@ -50,7 +48,7 @@ class CreatePost extends Component {
     render() {
         return (
             <div className="post-create">
-                <h2 className="">Create Post</h2>
+                <h2>Create Post</h2>
                 <Formik initialValues={{image: '', title: '', tags: []}}
                         validationSchema={postModel}
                         onSubmit={this.submit.bind(this)}

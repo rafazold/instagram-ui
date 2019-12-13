@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import registerModel from '../models/register.model';
+import editProfileModel from '../models/editProfile.models';
 import { Button } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import config from "../config";
-import "./Register.scss";
+import "./EditProfile.scss";
 
-class Register extends Component {
+class EditPofile extends Component {
 
     convertToFormData(values) {
         const data = new FormData();
@@ -15,21 +15,30 @@ class Register extends Component {
                 ? values[key].forEach(value => data.append(key + '[]', value))
                 : data.append(key, values[key]) ;
         }
+        console.log('data: ', data);
         return data;
     }
 
     submit(values) {
         const data = this.convertToFormData(values);
-
-        fetch(config.apiUrl + '/api/users', {
-            method: 'POST',
-            body: data,
+        fetch(config.apiUrl + '/api/users/me', {
             credentials: 'include'
+
         })
             .then(res => res.json())
-            .then(user => console.log('user:', user))
-            // .then(() => window.location.href = "/")
-            .catch(err => console.log(err));
+            .then(user => {
+                fetch(config.apiUrl + '/api/users/' + user._id, {
+                    method: 'PUT',
+                    body: data,
+                    credentials: 'include'
+                })
+                    .then(res => res.json())
+                    .then(user => console.log('user:', user))
+                    // .then(() => window.location.href = "/")
+                    .catch(err => console.log(err));
+            })
+            .catch(e => console.log(e))
+
     }
 
 
@@ -37,9 +46,9 @@ class Register extends Component {
     render() {
         return (
             <div className="register-new">
-                <h2>Registration</h2>
+                <h2>Profile</h2>
                 <Formik initialValues={{name: '', username: '', password: '', birthDate: new Date(), gender: 'm', about: '', avatar: ''}}
-                        validationSchema={registerModel}
+                        validationSchema={editProfileModel}
                         onSubmit={this.submit.bind(this)}
                 >
                         {({setFieldValue}) => {
@@ -101,4 +110,4 @@ class Register extends Component {
     }
 }
 
-export default withRouter(Register);
+export default withRouter(EditPofile);
