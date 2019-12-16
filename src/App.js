@@ -11,7 +11,7 @@ import {
 import CreatePost from "./CreatePost/CreatePost";
 import Register from "./Register/Register";
 import Login from "./Login/Login";
-import EditPofile from "./editProfile/EditPofile";
+import EditPofile from "./EditProfile/EditPofile";
 
 
 function App() {

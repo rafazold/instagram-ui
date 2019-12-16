@@ -7,43 +7,51 @@ import config from "../config";
 import "./EditProfile.scss";
 
 class EditPofile extends Component {
-
-    convertToFormData(values) {
-        const data = new FormData();
-        for (let key in values) {
-            Array.isArray(values[key])
-                ? values[key].forEach(value => data.append(key + '[]', value))
-                : data.append(key, values[key]) ;
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: null,
         }
-        console.log('data: ', data);
-        return data;
     }
 
-    submit(values) {
-        const data = this.convertToFormData(values);
+    componentDidMount() {
         fetch(config.apiUrl + '/api/users/me', {
             credentials: 'include'
 
         })
             .then(res => res.json())
             .then(user => {
-                fetch(config.apiUrl + '/api/users/' + user._id, {
-                    method: 'PUT',
-                    body: data,
-                    credentials: 'include'
-                })
-                    .then(res => res.json())
-                    .then(user => console.log('user:', user))
-                    // .then(() => window.location.href = "/")
-                    .catch(err => console.log(err));
+                this.setState({user});
             })
             .catch(e => console.log(e))
-
     }
 
+    convertToFormData(values) {
+        const data = new FormData();
+        for (let key in values) {
+            if (values[key]) {
+                Array.isArray(values[key])
+                ? values[key].forEach(value => data.append(key + '[]', value))
+                : data.append(key, values[key]) ;}
+        }
+        return data;
+    }
 
+    submit(values) {
+        const data = this.convertToFormData(values);
+        fetch(config.apiUrl + '/api/users/' + this.state.user._id, {
+            method: 'PUT',
+            body: data,
+            credentials: 'include'
+        })
+            .then(res => res.json())
+            .then(user => console.log('user:', user))
+            // .then(() => window.location.href = "/")
+            .catch(err => console.log(err));
+    }
 
     render() {
+        console.log('test', this.state.user);
         return (
             <div className="register-new">
                 <h2>Profile</h2>
