@@ -37,9 +37,9 @@ class Feed extends Component {
                     }
                 <div className="feed d-flex flex-wrap card-group">
                     {this.state.posts.map(post => {
-                        return <div className="post-wrapper col-sm-12 col-md-4">
+                        return <div key={post._id} className="post-wrapper col-sm-12 col-md-4">
                             <Post
-                                key={post._id}
+
                                 title={post.title}
                                 src={post.image}
                                 likes={post.likes}

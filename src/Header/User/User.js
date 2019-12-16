@@ -28,12 +28,10 @@ class User extends Component {
             .catch(e => console.log(e))
     }
 
-    toggleMenu() {
+    showUserMenu() {
             this.setState({hideMenu: !this.state.hideMenu})
     }
-    showUserMenu() {
-        this.setState({hideMenu: true})
-    }
+
 
     hideUserMenu() {
         this.setState({hideMenu: true})
@@ -58,14 +56,14 @@ class User extends Component {
 
     render() {
         return (
-            <div >
+            <div className="user-options-wrapper" onMouseLeave={this.hideUserMenu.bind(this)}>
                 {
                     this.state.user
                         ? <div className="user-box">
                             <div className="header-user-details">
                                 Hello {this.state.user.username}
                             </div>
-                            <div className="user-avatar" onClick={this.toggleMenu.bind(this)}>
+                            <div className="user-avatar" onClick={this.showUserMenu.bind(this)}>
                                 {
                                     this.state.user
                                         ? <img src={config.apiUrl + '/' + this.state.user.avatar}/>
@@ -75,7 +73,6 @@ class User extends Component {
 
                             </div>
                                 <ul className={`user-options ${this.state.hideMenu ? "hide-user-options" : ""}`}
-                                    // onMouseOut={this.hideUserMenu.bind(this)}
                                     >
                                     <li>Dark Mode</li>
                                     <li><Link to="/editprofile">Edit Profile</Link></li>
@@ -87,7 +84,7 @@ class User extends Component {
                             <Link className="user-text" to="/register">Register</Link>
                             <Link className="user-text" to="/login">Login</Link>
                             <div className="user-avatar"
-                                 onClick={this.toggleMenu.bind(this)}>
+                                 onClick={this.showUserMenu.bind(this)}>
                                 <FaUser size="2em" />
                             </div>
                         </div>}

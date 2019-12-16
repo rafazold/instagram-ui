@@ -6,9 +6,9 @@ class Tags extends Component {
     render() {
         // const Tags = {this.props.Tags};
         return (
-            <div className="tags">
+            <div className="tags" >
                 {this.props.tags.map(tag => {
-                    return <span>
+                    return <span key={Math.random().toString(36).substring(2, 15)}>
                         <Tag>
                             {tag}
                         </Tag>
