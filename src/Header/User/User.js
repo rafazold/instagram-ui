@@ -74,8 +74,8 @@ class User extends Component {
                             </div>
                                 <ul className={`user-options ${this.state.hideMenu ? "hide-user-options" : ""}`}
                                     >
-                                    <li>Dark Mode</li>
-                                    <li><Link to="/editprofile">Edit Profile</Link></li>
+                                    {/*<li>Dark Mode</li>*/}
+                                    <li><Link to="/editprofile" >Edit Profile</Link></li>
                                     <li onClick={this.logout.bind(this)}>Logout</li>
                                 </ul>
                         </div>
