@@ -12,7 +12,7 @@ class Post extends Component {
             <article className="post">
                 <Header creationDate={this.props.datePosted} avatar={this.props.avatar} userName={this.props.userName}/>
                 <div className="post-image-wrapper">
-                    <img className="post-image" src={config.apiUrl + '/' + this.props.src} alt="post"/>
+                    <img className="post-image" src={this.props.src} alt="post"/>
                 </div>
                 <Engage likes={ this.props.likes}/>
                 <div className="post-content">

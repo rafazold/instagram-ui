@@ -66,7 +66,7 @@ class User extends Component {
                             <div className="user-avatar" onClick={this.showUserMenu.bind(this)}>
                                 {
                                     this.state.user
-                                        ? <img src={config.apiUrl + '/' + this.state.user.avatar}/>
+                                        ? <img src={this.state.user.avatar}/>
                                         : <FaUser size="2em" />
 
                                 }

@@ -1,3 +1,4 @@
+@import '../utilities/_variables.scss';
 
 .avatar-color {
   width: 90%;
@@ -14,3 +15,10 @@
   width: 10%;
 }
 
+.user-edit {
+  background-color: $post-bg-color;
+  color: $post-font-color;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}

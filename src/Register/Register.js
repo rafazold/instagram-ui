@@ -28,7 +28,7 @@ class Register extends Component {
         })
             .then(res => res.json())
             .then(user => console.log('user:', user))
-            // .then(() => window.location.href = "/")
+            .then(() => window.location.href = "/")
             .catch(err => console.log(err));
     }
 
