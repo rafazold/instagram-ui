@@ -3,7 +3,6 @@ import "./Post.scss";
 import Engage from "./Engage/Engage";
 import Tags from "./Tags/Tags";
 import Header from "./Header/Header";
-import config from '../../config'
 
 
 class Post extends Component {
