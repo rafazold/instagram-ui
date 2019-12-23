@@ -4,7 +4,6 @@ import "./User.scss"
 import config from "../../config";
 import { withRouter } from 'react-router-dom';
 import {FaUser} from 'react-icons/fa'
-import Toggle from "react-toggle";
 
 class User extends Component {
     constructor(props) {
@@ -22,7 +21,6 @@ class User extends Component {
         })
             .then(res => res.json())
             .then(user => {
-                // console.log(user.avatarColor);
                 this.setState({user});
             })
             .catch(e => console.log(e))
