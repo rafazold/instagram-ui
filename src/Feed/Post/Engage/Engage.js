@@ -19,6 +19,7 @@ class Engage extends Component {
     }
 
     likePost() {
+        this.setState({liked: !this.state.liked});
         fetch(`${config.apiUrl}/api/posts/${this.props.postId}/like`, {
             headers: {
                 'Content-Type': 'application/json'
@@ -29,12 +30,6 @@ class Engage extends Component {
             credentials: 'include'
         })
             .then(res => res.json())
-            .then(likeStatus => {
-                console.log(likeStatus)
-                if(likeStatus.status === 200) {
-                    this.setState({liked: likeStatus})
-                }
-            })
             .catch(e => console.log('Unexpected error: ', e))
     }
 
