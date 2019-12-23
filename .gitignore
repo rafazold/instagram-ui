@@ -25,4 +25,6 @@ yarn-error.log*
 .idea
 /public/background/
 
-.firebase/*
+/.firebase/*
+.firebaserc
+firebase.json
