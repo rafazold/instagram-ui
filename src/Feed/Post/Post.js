@@ -13,7 +13,7 @@ class Post extends Component {
                 <div className="post-image-wrapper">
                     <img className="post-image" src={this.props.src} alt="post"/>
                 </div>
-                <Engage likes={ this.props.likes}/>
+                <Engage likes={ this.props.likes.length} postId = {this.props.postId} isLiked={this.props.isLiked}/>
                 <div className="post-content">
                     <h1 className="post-title">{this.props.title}</h1>
                     <Tags tags={this.props.tags} />

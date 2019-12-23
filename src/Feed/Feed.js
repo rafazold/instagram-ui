@@ -15,7 +15,9 @@ class Feed extends Component {
     }
 
     componentDidMount() {
-        fetch(config.apiUrl + '/api/posts')
+        fetch(config.apiUrl + '/api/posts', {
+            credentials: 'include'
+        })
             .then(res => res.json())
             .then(posts => {
                 this.setState({posts,loading:false});
@@ -47,6 +49,8 @@ class Feed extends Component {
                                 tags={post.tags}
                                 userName={post.user.username}
                                 avatar={post.user.avatar}
+                                postId={post._id}
+                                isLiked={post.isLiked}
                             />
                         </div>
                     })}
