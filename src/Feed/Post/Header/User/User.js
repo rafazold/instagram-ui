@@ -7,7 +7,7 @@ class User extends Component {
             <div className="user-details">
                 {/*<FaUser className="user-icon" size="2em" color={this.props.iconColor} />*/}
                 <img src={this.props.avatar} alt="userImage"/>
-                {this.props.userName}
+                <span className="post-user-text">{this.props.userName}</span>
             </div>
         );
     }

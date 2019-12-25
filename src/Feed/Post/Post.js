@@ -9,11 +9,12 @@ class Post extends Component {
     render() {
         return (
             <article className="post">
-                <Header creationDate={this.props.datePosted} avatar={this.props.avatar} userName={this.props.userName}/>
+
                 <div className="post-image-wrapper">
+                    <Engage likes={ this.props.likes.length} postId = {this.props.postId} isLiked={this.props.isLiked}/>
                     <img className="post-image" src={this.props.src} alt="post"/>
                 </div>
-                <Engage likes={ this.props.likes.length} postId = {this.props.postId} isLiked={this.props.isLiked}/>
+                <Header creationDate={this.props.datePosted} avatar={this.props.avatar} userName={this.props.userName}/>
                 <div className="post-content">
                     <h1 className="post-title">{this.props.title}</h1>
                     <Tags tags={this.props.tags} />

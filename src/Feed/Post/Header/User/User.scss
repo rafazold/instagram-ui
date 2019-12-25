@@ -4,10 +4,13 @@
   font-size: 12px;
   color: $post-font-color;
   margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     border: solid black 1px;
     border-radius: 50%;
     display: flex;
@@ -21,6 +24,6 @@
   }
 }
 
-.user-text {
-  padding: 5px;
+.post-user-text {
+  padding: 8px;
 }

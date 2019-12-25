@@ -1,8 +1,10 @@
+@import "./utilities/_variables.scss";
 
 body {
-  background-image: url("https://rafazold.github.io/instagram-ui/background/background-blur-clean-clear-531880.jpg");
+  //background-image: url("https://rafazold.github.io/instagram-ui/background/background-blur-clean-clear-531880.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-color: $post-bg-color;
 }
 
 .App-logo {

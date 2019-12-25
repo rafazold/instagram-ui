@@ -2,15 +2,16 @@
 
 .tag {
   margin: 5px 5px 5px 0;
-  background-color: #f0f7fb;
-  border: solid 1px $post-font-color;
+  background-color: $post-bg-color;
+  border: solid 1px #e5e5e5;
+  box-shadow: $tag-box-shadow;
   border-radius: 4px;
   line-height: 1px;
   overflow: hidden;
   padding: 2px;
-  font-size: 12px;
+  font-size: 10px;
   &:hover {
-    background-color: $post-bg-color;
+    background-color: darken($post-bg-color, 3%);
     padding: 3px;
   }
 }

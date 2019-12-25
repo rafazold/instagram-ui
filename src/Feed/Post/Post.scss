@@ -14,15 +14,16 @@
 }
 
 @include media-breakpoint-up(md) {
-  .post-image-wrapper {
-    height: 150px;;
+  .post-image-wrapper, .post-image {
+    height: 250px;;
   }
 }
 
 .post {
   border: 1px solid #f1f1f1;
+  box-shadow:$box-shadow;
   margin: 15px 0;
-  border-radius: 3px;
+  border-radius: 13px;
   overflow: hidden;
   background-color: $post-bg-color;
 
@@ -30,8 +31,10 @@
     width: 100%;
     vertical-align: middle;
     transition: all .4s ease-in-out;
+    object-fit: cover;
     &:hover {
       width: 125%;
+      height: 125%;
     }
   }
 }
@@ -41,10 +44,10 @@
 }
 
 .post-image-wrapper {
-  //height: 200px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  flex-direction: column
 }
 
 .post-title {
@@ -52,6 +55,9 @@
   font-size: 12px;
   line-height: 1.5em;
   margin-left: 5px;
+  border-bottom: 1px solid #bebebeab;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
 }
 
 .post-content {

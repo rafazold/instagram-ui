@@ -3,7 +3,10 @@
 button {
   svg {
     max-width: 30px;
-    max-height: 30px
+    max-height: 30px;
+    &:hover {
+      color: #fe28a7;
+    }
   }
 }
 
@@ -15,7 +18,6 @@ button {
 
 .engageButtons {
   display: flex;
-  margin: 5px 5px 10px 0;
   justify-content: space-between;
 }
 
@@ -26,9 +28,13 @@ button {
 .post-likes {
   justify-content: flex-end;
   color: $post-font-color;
+  margin-right: 6px;
 }
 
 
 .likesCount {
   margin-left: 5px;
+}
+.engage {
+  width: 100%;
 }
