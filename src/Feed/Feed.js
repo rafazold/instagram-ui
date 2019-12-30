@@ -15,7 +15,7 @@ class Feed extends Component {
     }
 
     componentDidMount() {
-        fetch(config.apiUrl + '/api/posts', {
+        fetch(`${config.apiUrl}/api/posts`, {
             credentials: 'include'
         })
             .then(res => res.json())

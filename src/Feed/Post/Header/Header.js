@@ -2,12 +2,6 @@ import React, {Component} from 'react';
 import "./Header.scss"
 import User from "./User/User";
 
-
-// function formatDate(dateStr) {
-//     const date = new Date(dateStr);
-//     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-//     return months[date.getMonth()] + ' ' + date.getDate();
-// }
 function formatDate(dateStr) {
     const date = new Date(dateStr);
     return date.toLocaleString("en-US", { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' ,year: 'numeric', })

@@ -1,0 +1,12 @@
+.single-comment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments-avatar {
+  width: 25px;
+  height: 25px;
+  border: solid black 1px;
+  border-radius: 50%;
+  margin-right: 20px;
+}

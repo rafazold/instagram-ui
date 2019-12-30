@@ -12,6 +12,7 @@ import CreatePost from "./CreatePost/CreatePost";
 import Register from "./Register/Register";
 import Login from "./Login/Login";
 import EditPofile from "./EditProfile/EditPofile";
+import SinglePost from "./SinglePost/SinglePost";
 
 
 function App() {
@@ -21,24 +22,13 @@ function App() {
               <Header />
               <main className="container">
                   <Switch>
-                      <Route path="/profile">
-                          <Profile />
-                      </Route>
-                      <Route path="/register">
-                          <Register />
-                      </Route>
-                      <Route path="/editprofile">
-                          <EditPofile />
-                      </Route>
-                      <Route path="/login">
-                          <Login />
-                      </Route>
-                      <Route path="/post/create">
-                          <CreatePost />
-                      </Route>
-                      <Route path="/">
-                          <Feed/>
-                      </Route>
+                      <Route path="/profile" component={Profile} />
+                      <Route path="/register" component={Register} />
+                      <Route path="/editprofile" component={EditPofile} />
+                      <Route path="/posts/:postId" component={SinglePost}/>
+                      <Route path="/login" component={Login} />
+                      <Route path="/post/create" component={CreatePost} />
+                      <Route path="/" component={Feed} />
                   </Switch>
               </main>
           </div>

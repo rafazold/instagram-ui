@@ -1,0 +1,50 @@
+//TODO: media query on sm height auto on image-wrapper
+//
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+@import "../utilities/_variables.scss";
+
+.single-post {
+  border: 1px solid #f1f1f1;
+  box-shadow:$box-shadow;
+  margin: 15px 0;
+  border-radius: 13px;
+  //overflow: hidden;
+  background-color: $post-bg-color;
+
+  .single-post-image {
+    //width: 100%;
+    vertical-align: middle;
+    transition: all .4s ease-in-out;
+    object-fit: cover;
+    height: 60vh;
+  }
+}
+
+.post-date {
+  font-size: 12px;
+}
+
+.single-post-image-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  height: auto;
+}
+
+.single-post-title {
+  color: $post-font-color;
+  font-size: 12px;
+  line-height: 1.5em;
+  margin-left: 5px;
+  border-bottom: 1px solid #bebebeab;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+
+.single-post-content {
+  min-height: 90px;
+}
