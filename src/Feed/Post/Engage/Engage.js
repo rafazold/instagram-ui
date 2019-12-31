@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { AiOutlineCloudDownload, AiOutlineShareAlt, AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import { FaRegComments } from "react-icons/fa";
 import config from "../../../config";
+import Modal from 'react-bootstrap/Modal'
 
 import "./Engage.scss"
 
@@ -39,8 +40,8 @@ class Engage extends Component {
                 <div className="engageButtons">
                     <span className="post-action-buttons">
                         <button className="commentButton"><FaRegComments /></button>
-                        <button className="shareButton"><AiOutlineShareAlt /></button>
-                        <button className="saveButton"><AiOutlineCloudDownload/></button>
+                        {/*<button className="shareButton"><AiOutlineShareAlt /></button>*/}
+                        {/*<button className="saveButton"><AiOutlineCloudDownload/></button>*/}
                     </span>
                     <span className="post-likes">
                         <button className="likeButton" onClick={this.likePost.bind(this)}>

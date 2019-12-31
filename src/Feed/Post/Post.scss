@@ -62,4 +62,15 @@
 
 .post-content {
   min-height: 90px;
+  a {
+    text-decoration: none;
+    color: #212529;
+    &:hover {
+      color: #fe28a7
+    }
+  }
+}
+
+.to-single-post {
+  margin-left: calc(50% - 45px);
 }

@@ -81,7 +81,7 @@ class CreatePost extends Component {
                                                setFieldValue('tags', tags);
                                            }}
                                            className="tags-wrapper create-post-tags" />
-                                <div><sub>Press Enter after each a tag</sub></div>
+                                <div><sub>Press Enter after each tag</sub></div>
                             </div>
                             <div className="row form-group d-flex justify-content-end">
                                 <Button type="submit"><FaRegShareSquare /> Share your post</Button>

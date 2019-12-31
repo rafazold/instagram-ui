@@ -1,6 +1,9 @@
 .single-comment {
   display: flex;
   justify-content: space-between;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 14px;
 }
 
 .comments-avatar {
@@ -9,4 +12,27 @@
   border: solid black 1px;
   border-radius: 50%;
   margin-right: 20px;
+}
+
+.comment-content-right {
+  justify-content: flex-end;
+}
+
+.single-comment-left{
+  justify-content: flex-start;
+}
+
+.comment-content-date {
+  margin-right: 10px;
+}
+
+.comment-delete {
+  font-size: 13px;
+  padding: 0px 4px 0px 4px;
+  border-radius: 50%;
+  border: #bebebeab solid 1px;
+  &:hover {
+    color: #fe28a7;
+    border-color: #fe28a7;
+  }
 }

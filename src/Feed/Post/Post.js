@@ -3,6 +3,7 @@ import "./Post.scss";
 import Engage from "./Engage/Engage";
 import Tags from "./Tags/Tags";
 import Header from "./Header/Header";
+import {Link} from "react-router-dom";
 
 
 class Post extends Component {
@@ -18,6 +19,7 @@ class Post extends Component {
                 <div className="post-content">
                     <h1 className="post-title">{this.props.title}</h1>
                     <Tags tags={this.props.tags} />
+                    <Link className="to-single-post" to={`/posts/${this.props.postId}`}>More details</Link>
                 </div>
             </article>
         );

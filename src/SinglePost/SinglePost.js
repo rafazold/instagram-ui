@@ -13,12 +13,24 @@ class SinglePost extends Component {
         super(props);
         this.state = {
             post: null,
-            loading: true
+            loading: true,
+            user: null
         }
     }
 
     componentDidMount () {
         const {postId} = this.props.match.params;
+
+        fetch(config.apiUrl + '/api/users/me', {
+            credentials: 'include'
+
+        })
+            .then(res => res.json())
+            .then(user => {
+                this.setState({user});
+            })
+            .catch(e => console.log(e));
+
         fetch(`${config.apiUrl}/api/posts/${postId}`, {
             credentials: 'include'
         })
@@ -49,7 +61,7 @@ class SinglePost extends Component {
                     <div className="single-post-content">
                         <h1 className="single-post-title">{this.state.post.title}</h1>
                         <Tags tags={this.state.post.tags} />
-                        <Comments postId={this.props.match.params.postId}/>
+                        <Comments postId={this.props.match.params.postId} userId={this.state.user}/>
                     </div>
                 </article>
                 }

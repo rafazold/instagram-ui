@@ -10,7 +10,6 @@ class Comments extends Component {
         }
     }
     componentDidMount() {
-        console.log('what is goingonhere?',this.props.postId);
         fetch(`${config.apiUrl}/api/posts/${this.props.postId}/comments`, {
             credentials: 'include'
         })
@@ -24,12 +23,16 @@ class Comments extends Component {
         return (
             <div className="single-post-comments">
                 {this.state.comments.map(comment => {
-                    return <div>
+                    return <div key={comment._id}>
                         <Comment
                         content={comment.content}
                         created={comment.created}
                         username={comment.user[0].username}
                         userAvatar={comment.user[0].avatar}
+                        postId={this.props.postId}
+                        commentId={comment._id}
+                        userId={this.props.userId}
+                        commentUser={comment.user[0]}
                         />
                     </div>
                 })}
