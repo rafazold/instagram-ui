@@ -13,7 +13,6 @@ class Header extends Component {
             <header className="post-header">
                 <User avatar={this.props.avatar} userName={this.props.userName} />
                 <div className="post-date">{formatDate(this.props.creationDate)}</div>
-                {/*<div className="post-date">{this.props.creationDate.toLocaleString("en-US", { month: 'short', day: 'numeric', year: 'numeric', })}</div>*/}
             </header>
         );
     }

@@ -41,3 +41,34 @@ button {
 .engage {
   width: 100%;
 }
+
+.modal-content {
+  border: 1px solid #f1f1f1;
+  box-shadow:$modal-box-shadow;
+  //margin: 15px 0;
+  border-radius: 13px;
+  //overflow: hidden;
+  background-color: $post-bg-color;
+}
+
+.comment-form-input {
+  border-radius: 13px;
+  margin: 0 0.7rem;
+}
+
+.modal-body {
+  border-radius: 13px;
+
+}
+
+.modal-button {
+  border-radius: 13px;
+  line-height: normal;
+  padding: 4px;
+  margin-right: 10px;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: 0.2rem 1rem;
+}

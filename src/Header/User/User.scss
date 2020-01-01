@@ -1,11 +1,19 @@
 @import "../../utilities/_variables.scss";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
+@include media-breakpoint-down(sm) {
+
+}
 
 .user-box {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  height: 250px;
+  //height: 250px;
+  background-color: $post-bg-color;
 }
 
 .user-avatar img {

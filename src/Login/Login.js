@@ -16,7 +16,7 @@ class Login extends Component {
 
     submit(values) {
         this.setState({incorrectLoginMessage: false});
-        fetch(config.apiUrl + '/api/users/login', {
+        fetch(`${config.apiUrl}/api/users/login`, {
             method: 'POST',
             body: JSON.stringify(values),
             credentials: 'include',

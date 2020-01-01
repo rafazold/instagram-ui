@@ -21,7 +21,7 @@ h2 {
 [type="file"] + label {
   background: #007bff;
   border: none;
-  border-radius: 5px;
+  border-radius: 13px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -31,11 +31,10 @@ h2 {
   margin-bottom: 1rem;
   margin-top: 1rem;
   outline: none;
-  padding: 10px 15px;
+  padding: 4px 7px;
   position: relative;
   transition: all 0.3s;
   vertical-align: middle;
-  //width: 200px;
 
   &:hover {
     background-color: darken(#007bff, 10%);
@@ -58,7 +57,6 @@ h2 {
   width: 100%;
   padding: 4px;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
   background-color: #fff;
 
   .react-tagsinput-input {
@@ -79,4 +77,13 @@ h2 {
     padding: 2px 4px;
     border-radius: 3px;
   }
+}
+
+.post-create-submit {
+  border-radius: 13px;
+  padding: 4px 7px;
+}
+
+.post-create-title, .create-post-tags {
+  border-radius: 13px;
 }

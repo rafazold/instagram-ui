@@ -1,4 +1,25 @@
 @import "../utilities/_variables.scss";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
+
+@include media-breakpoint-down(sm) {
+  .navbar-nav {
+    background-color: $post-bg-color !important;
+    //border-radius: 13px;
+  }
+  .navbar {
+    height: 57px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .navbar {
+    flex-wrap: nowrap;
+    height: 43px;
+  }
+}
 
 .bg-light {
   background-color: $post-bg-color !important;
@@ -13,11 +34,7 @@
   z-index: 5;
 }
 
-.navbar {
-  height: 43px;
-  flex-wrap: nowrap;
-}
-
 .navbar-collapse {
   height: 50px;
 }
+

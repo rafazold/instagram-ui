@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "./User.scss"
 import config from "../../config";
 import { withRouter } from 'react-router-dom';
-import {FaUser} from 'react-icons/fa'
+import {FaUserCircle} from 'react-icons/fa'
 
 class User extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class User extends Component {
     }
 
     componentDidMount() {
-        fetch(config.apiUrl + '/api/users/me', {
+        fetch(`${config.apiUrl}/api/users/me`, {
             credentials: 'include'
 
         })
@@ -36,7 +36,7 @@ class User extends Component {
     }
 
     logout() {
-        fetch(config.apiUrl + '/api/users/logout', {
+        fetch(`${config.apiUrl}/api/users/logout`, {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -65,7 +65,7 @@ class User extends Component {
                                 {
                                     this.state.user
                                         ? <img src={this.state.user.avatar}/>
-                                        : <FaUser size="2em" />
+                                        : <FaUserCircle size="2em" />
 
                                 }
 
@@ -83,7 +83,7 @@ class User extends Component {
                             <Link className="user-text" to="/login">Login</Link>
                             <div className="user-avatar"
                                  onClick={this.showUserMenu.bind(this)}>
-                                <FaUser size="2em" />
+                                <FaUserCircle size="2em" />
                             </div>
                         </div>}
             </div>
