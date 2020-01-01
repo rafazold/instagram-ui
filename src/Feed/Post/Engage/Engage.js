@@ -20,7 +20,10 @@ class Engage extends Component {
     }
 
     componentDidMount() {
-        this.setState({liked: this.props.isLiked})
+        this.setState({
+            liked: this.props.isLiked,
+            user: this.props.user
+        })
     }
 
     likePost() {
@@ -79,9 +82,11 @@ class Engage extends Component {
 
                 <Modal show={this.state.showModal} onHide={this.handleClose.bind(this)} centered>
                     <Modal.Header closeButton>
-                        <Modal.Title>Please write your comment below:</Modal.Title>
+                        { this.state.user ? <Modal.Title>Please write your comment below:</Modal.Title> : null}
                     </Modal.Header>
                     <Modal.Body>
+                        { !this.state.user ?
+                            <h3>Please log in to add comments</h3> :
                         <Formik initialValues={{content: ''}}
                                 validationSchema={commentModel}
                                 onSubmit={this.submitComment.bind(this)}
@@ -103,7 +108,7 @@ class Engage extends Component {
                                 </Button>
                             </Form>
 
-                        </Formik>
+                        </Formik>}
                     </Modal.Body>
                 </Modal>
             </section>

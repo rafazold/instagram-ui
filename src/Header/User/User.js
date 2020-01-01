@@ -4,6 +4,8 @@ import "./User.scss"
 import config from "../../config";
 import { withRouter } from 'react-router-dom';
 import {FaUserCircle} from 'react-icons/fa'
+import {FiLogOut} from 'react-icons/fi'
+import {MdEdit} from 'react-icons/md'
 
 class User extends Component {
     constructor(props) {
@@ -56,12 +58,12 @@ class User extends Component {
         return (
             <div className="user-options-wrapper" onMouseLeave={this.hideUserMenu.bind(this)}>
                 {
-                    this.state.user
-                        ? <div className="user-box">
-                            <div className="header-user-details">
+                    this.state.user ?
+                        <div className="user-box">
+                            <div className="header-user-details user-box-item">
                                 Hello {this.state.user.username}
                             </div>
-                            <div className="user-avatar" onClick={this.showUserMenu.bind(this)}>
+                            <div className="user-avatar user-box-item" onClick={this.showUserMenu.bind(this)}>
                                 {
                                     this.state.user
                                         ? <img src={this.state.user.avatar}/>
@@ -70,12 +72,8 @@ class User extends Component {
                                 }
 
                             </div>
-                                <ul className={`user-options ${this.state.hideMenu ? "hide-user-options" : ""}`}
-                                    >
-                                    {/*<li>Dark Mode</li>*/}
-                                    <li><Link to="/editprofile" >Edit Profile</Link></li>
-                                    <li onClick={this.logout.bind(this)}>Logout</li>
-                                </ul>
+                            <Link to="/editprofile" title="Edit profile" className="user-box-item"><MdEdit size="1.5em"/></Link>
+                            <span title="log out" onClick={this.logout.bind(this)} className="user-box-item" ><FiLogOut size="1.5em"/></span>
                         </div>
 
                         : <div className="user-box">

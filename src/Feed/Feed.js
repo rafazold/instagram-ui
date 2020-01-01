@@ -10,11 +10,22 @@ class Feed extends Component {
         super(props);
         this.state = {
             posts: [],
-            loading: true
+            loading: true,
+            user: null
         }
     }
 
     componentDidMount() {
+        fetch(config.apiUrl + '/api/users/me', {
+            credentials: 'include'
+
+        })
+            .then(res => res.json())
+            .then(user => {
+                this.setState({user});
+            })
+            .catch(e => console.log(e));
+
         fetch(`${config.apiUrl}/api/posts`, {
             credentials: 'include'
         })
@@ -51,6 +62,7 @@ class Feed extends Component {
                                 avatar={post.user.avatar}
                                 postId={post._id}
                                 isLiked={post.isLiked}
+                                user={this.state.user}
                             />
                         </div>
                     })}

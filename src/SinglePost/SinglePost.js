@@ -44,7 +44,8 @@ class SinglePost extends Component {
     render() {
         return (
             <div>
-                {this.state.loading ?
+                {
+                    this.state.loading ?
                     <div className="loading">
                         <HashLoader
                             sizeUnit={"px"}
@@ -52,9 +53,11 @@ class SinglePost extends Component {
                             color={'#5798ff'}
                             loading={true}/>
                     </div> :
+                        !this.state.user ?
+                            <h2>Please log for more details</h2> :
                 <article className="single-post">
                     <div className="single-post-image-wrapper">
-                        <Engage likes={ this.state.post.likes.length} postId={this.props.match.params.postId} isLiked={this.state.post.isLiked}/>
+                        <Engage likes={ this.state.post.likes.length} postId={this.props.match.params.postId} isLiked={this.state.post.isLiked} user={this.state.user}/>
                             <img className="single-post-image" src={this.state.post.image} alt="post"/>
                     </div>
                     <Header creationDate={this.state.post.created} avatar={this.state.post.user.avatar} userName={this.state.post.userName}/>

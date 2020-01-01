@@ -110,7 +110,7 @@ class CreatePost extends Component {
 
                     </Formik>
                 </div> :
-                <h2>Please log in before you can post</h2> }
+                <h2>Please log in before you post</h2> }
             </div>
         );
     }

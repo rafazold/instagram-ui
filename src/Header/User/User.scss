@@ -4,16 +4,30 @@
 @import "~bootstrap/scss/mixins/_breakpoints";
 
 @include media-breakpoint-down(sm) {
+  .user-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
+@include media-breakpoint-up(md) {
+  .user-box {
+    flex-direction: row;
+    align-items: center;
+    .user-box-item {
+      margin: 0 5px;
+    }
+  }
 }
 
 .user-box {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
-  //height: 250px;
   background-color: $post-bg-color;
+  a {
+    text-decoration: none;
+    color: #212529;
+  }
 }
 
 .user-avatar img {
