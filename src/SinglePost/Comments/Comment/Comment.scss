@@ -35,4 +35,7 @@
     color: #fe28a7;
     border-color: #fe28a7;
   }
+  &:focus {
+    outline: none;
+  }
 }
